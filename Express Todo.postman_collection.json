@@ -1,0 +1,664 @@
+{
+	"info": {
+		"_postman_id": "e4f07b3d-4e3b-4a3b-843a-3d3fe90d4405",
+		"name": "Express Todo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Signup",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"fullName\": \"Aghaz Junaid\",\r\n    \"email\": \"aghazjunaid96@gmail.com\",\r\n    \"password\": \"Agh@z098\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:4500/signup",
+					"host": [
+						"localhost"
+					],
+					"port": "4500",
+					"path": [
+						"signup"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Signup",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"fullName\": \"Aghaz Junaid\",\r\n    \"email\": \"aghazjunaid96@gmail.com\",\r\n    \"password\": \"Agh@z098\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:4500/signup",
+							"host": [
+								"localhost"
+							],
+							"port": "4500",
+							"path": [
+								"signup"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"aghazjunaid96@gmail.com\",\r\n    \"password\": \"Agh@z098\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:4500/login",
+					"host": [
+						"localhost"
+					],
+					"port": "4500",
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Login",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"aghazjunaid96@gmail.com\",\r\n    \"password\": \"Agh@z098\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:4500/login",
+							"host": [
+								"localhost"
+							],
+							"port": "4500",
+							"path": [
+								"login"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "491"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"1eb-yP/9MLHDOL3FzcFO2bg+kWQJ0oQ\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 30 Oct 2024 14:06:34 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": {\n        \"_id\": \"67223d25ce0077b7e8c05175\",\n        \"fullName\": \"Aghaz Junaid\",\n        \"email\": \"aghazjunaid96@gmail.com\",\n        \"password\": \"$2a$10$XrQAuSF9zrGBXFGwO3RJ5utyEebSs3cUgdAfqosvpXRCXlldWfNMG\",\n        \"createdAt\": \"2024-10-30T14:05:25.536Z\",\n        \"updatedAt\": \"2024-10-30T14:05:25.536Z\",\n        \"__v\": 0\n    },\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NzIyM2QyNWNlMDA3N2I3ZThjMDUxNzUiLCJlbWFpbCI6ImFnaGF6anVuYWlkOTZAZ21haWwuY29tIiwiaWF0IjoxNzMwMjk3MTk0LCJleHAiOjE3MzA0Njk5OTR9.j8qpPUgrq1HiLFukRQ8g2gKwHnhZCK6uzE-gq8HLVTM\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Add Task",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NzIyM2QyNWNlMDA3N2I3ZThjMDUxNzUiLCJlbWFpbCI6ImFnaGF6anVuYWlkOTZAZ21haWwuY29tIiwiaWF0IjoxNzMwMjk3MTk0LCJleHAiOjE3MzA0Njk5OTR9.j8qpPUgrq1HiLFukRQ8g2gKwHnhZCK6uzE-gq8HLVTM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"sprint 2\",\r\n    \"description\": \"sprint 2 ending on dec\",\r\n    \"dueDate\": \"2024-12-25\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:4500/task",
+					"host": [
+						"localhost"
+					],
+					"port": "4500",
+					"path": [
+						"task"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Add Task",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"sprint 2\",\r\n    \"description\": \"sprint 2 ending on dec\",\r\n    \"dueDate\": \"2024-12-25\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:4500/task",
+							"host": [
+								"localhost"
+							],
+							"port": "4500",
+							"path": [
+								"task"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "278"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"116-Epx+ZTzN/Qa15yUYoiYx7R+qqaE\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 30 Oct 2024 14:12:29 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": {\n        \"title\": \"sprint 2\",\n        \"description\": \"sprint 2 ending on dec\",\n        \"dueDate\": \"2024-12-25T00:00:00.000Z\",\n        \"completed\": \"false\",\n        \"user\": \"67223d25ce0077b7e8c05175\",\n        \"_id\": \"67223ecdbb6c18e6fe1be7ea\",\n        \"createdAt\": \"2024-10-30T14:12:29.929Z\",\n        \"updatedAt\": \"2024-10-30T14:12:29.929Z\",\n        \"__v\": 0\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Get All Task",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NzIyM2QyNWNlMDA3N2I3ZThjMDUxNzUiLCJlbWFpbCI6ImFnaGF6anVuYWlkOTZAZ21haWwuY29tIiwiaWF0IjoxNzMwMjk3MTk0LCJleHAiOjE3MzA0Njk5OTR9.j8qpPUgrq1HiLFukRQ8g2gKwHnhZCK6uzE-gq8HLVTM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:4500/tasks",
+					"host": [
+						"localhost"
+					],
+					"port": "4500",
+					"path": [
+						"tasks"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get All Task",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:4500/tasks",
+							"host": [
+								"localhost"
+							],
+							"port": "4500",
+							"path": [
+								"tasks"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "550"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"226-Gfh6ePYuJup4xAf/y/1et0TAgMk\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 30 Oct 2024 14:14:06 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": [\n        {\n            \"_id\": \"67223ecdbb6c18e6fe1be7ea\",\n            \"title\": \"sprint 2\",\n            \"description\": \"sprint 2 ending on dec\",\n            \"dueDate\": \"2024-12-25T00:00:00.000Z\",\n            \"completed\": \"false\",\n            \"user\": \"67223d25ce0077b7e8c05175\",\n            \"createdAt\": \"2024-10-30T14:12:29.929Z\",\n            \"updatedAt\": \"2024-10-30T14:12:29.929Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"67223e17ce0077b7e8c0517c\",\n            \"title\": \"sprint 1\",\n            \"description\": \"sprint 1 ending on dec\",\n            \"dueDate\": \"2024-12-20T00:00:00.000Z\",\n            \"completed\": \"false\",\n            \"user\": \"67223d25ce0077b7e8c05175\",\n            \"createdAt\": \"2024-10-30T14:09:27.666Z\",\n            \"updatedAt\": \"2024-10-30T14:09:27.666Z\",\n            \"__v\": 0\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "Get Task by Id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NzIyM2QyNWNlMDA3N2I3ZThjMDUxNzUiLCJlbWFpbCI6ImFnaGF6anVuYWlkOTZAZ21haWwuY29tIiwiaWF0IjoxNzMwMjk3MTk0LCJleHAiOjE3MzA0Njk5OTR9.j8qpPUgrq1HiLFukRQ8g2gKwHnhZCK6uzE-gq8HLVTM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:4500/task/:id",
+					"host": [
+						"localhost"
+					],
+					"port": "4500",
+					"path": [
+						"task",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "67223ecdbb6c18e6fe1be7ea"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get Task by id",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:4500/task/:id",
+							"host": [
+								"localhost"
+							],
+							"port": "4500",
+							"path": [
+								"task",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "67223ecdbb6c18e6fe1be7ea"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "278"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"116-QPrvHWeE3v5EeP450sMmKDxs3M4\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 30 Oct 2024 14:14:45 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": {\n        \"_id\": \"67223ecdbb6c18e6fe1be7ea\",\n        \"title\": \"sprint 2\",\n        \"description\": \"sprint 2 ending on dec\",\n        \"dueDate\": \"2024-12-25T00:00:00.000Z\",\n        \"completed\": \"false\",\n        \"user\": \"67223d25ce0077b7e8c05175\",\n        \"createdAt\": \"2024-10-30T14:12:29.929Z\",\n        \"updatedAt\": \"2024-10-30T14:12:29.929Z\",\n        \"__v\": 0\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Update Task",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NzIyM2QyNWNlMDA3N2I3ZThjMDUxNzUiLCJlbWFpbCI6ImFnaGF6anVuYWlkOTZAZ21haWwuY29tIiwiaWF0IjoxNzMwMjk3MTk0LCJleHAiOjE3MzA0Njk5OTR9.j8qpPUgrq1HiLFukRQ8g2gKwHnhZCK6uzE-gq8HLVTM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"sprint 2\",\r\n    \"completed\": true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:4500/task/:id",
+					"host": [
+						"localhost"
+					],
+					"port": "4500",
+					"path": [
+						"task",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "67223ecdbb6c18e6fe1be7ea"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Update Task",
+					"originalRequest": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"sprint 2\",\r\n    \"completed\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:4500/task/:id",
+							"host": [
+								"localhost"
+							],
+							"port": "4500",
+							"path": [
+								"task",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "67223ecdbb6c18e6fe1be7ea"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "277"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"115-rhUZ+bPoetKU0hRBUoGYpn3lsIg\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 30 Oct 2024 14:16:15 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": {\n        \"_id\": \"67223ecdbb6c18e6fe1be7ea\",\n        \"title\": \"sprint 2\",\n        \"description\": \"sprint 2 ending on dec\",\n        \"dueDate\": \"2024-12-25T00:00:00.000Z\",\n        \"completed\": \"true\",\n        \"user\": \"67223d25ce0077b7e8c05175\",\n        \"createdAt\": \"2024-10-30T14:12:29.929Z\",\n        \"updatedAt\": \"2024-10-30T14:16:15.385Z\",\n        \"__v\": 0\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Delete Task by id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NzIyM2QyNWNlMDA3N2I3ZThjMDUxNzUiLCJlbWFpbCI6ImFnaGF6anVuYWlkOTZAZ21haWwuY29tIiwiaWF0IjoxNzMwMjk3MTk0LCJleHAiOjE3MzA0Njk5OTR9.j8qpPUgrq1HiLFukRQ8g2gKwHnhZCK6uzE-gq8HLVTM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"sprint 2\",\r\n    \"description\": \"sprint 2 ending on dec\",\r\n    \"dueDate\": \"2024-12-25\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:4500/task/:id",
+					"host": [
+						"localhost"
+					],
+					"port": "4500",
+					"path": [
+						"task",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "67223ecdbb6c18e6fe1be7ea"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Delete Task by id",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"sprint 2\",\r\n    \"description\": \"sprint 2 ending on dec\",\r\n    \"dueDate\": \"2024-12-25\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:4500/task/:id",
+							"host": [
+								"localhost"
+							],
+							"port": "4500",
+							"path": [
+								"task",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "67223ecdbb6c18e6fe1be7ea"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "40"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"28-KNXwoN+noDF/jJcTYIh6QYR6GT4\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 30 Oct 2024 14:17:59 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Task deleted successfully.\"\n}"
+				}
+			]
+		}
+	]
+}
